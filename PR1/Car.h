@@ -37,6 +37,7 @@ public:
     void setPassengerSeats(int);
     void setDoors(int);
 
-    friend std::istream& operator>>(std::istream&, Car&);
+    friend std::istream& operator >>(std::istream&, Car&);
+    friend std::ostream& operator <<(std::ostream&, const Car&);
 };
 
