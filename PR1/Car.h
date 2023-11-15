@@ -39,5 +39,7 @@ public:
 
     friend std::istream& operator >>(std::istream&, Car&);
     friend std::ostream& operator <<(std::ostream&, const Car&);
+
+    friend bool operator ==(const Car&, const Car&);
 };
 

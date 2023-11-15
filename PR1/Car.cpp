@@ -79,3 +79,14 @@ std::ostream& operator<<(std::ostream& out, const Car& car) {
     out << "Number of doors: " << car.getDoors() << "\n";
     return out;
 }
+
+bool operator ==(const Car& car1, const Car& car2) {
+    return car1.getId() == car2.getId() &&
+        car1.getModel() == car2.getModel() &&
+        car1.getYear() == car2.getYear() &&
+        car1.getPrice() == car2.getPrice() &&
+        car1.getRegNumber() == car2.getRegNumber() &&
+        car1.getVinNumber() == car2.getVinNumber() &&
+        car1.getPassengerSeats() == car2.getPassengerSeats() &&
+        car1.getDoors() == car2.getDoors();
+}
