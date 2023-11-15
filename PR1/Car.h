@@ -11,9 +11,14 @@ private:
     double price;
     int regNumber;
     int vinNumber;
-    int passenger_seats;
+    int passengerSeats;
     int doors;
 public:
+    Car();
+    Car(int, std::string, int, double, int, int, int, int);
+    Car(Car&);
+    ~Car(){}
+
     int getId() const;
     std::string getModel() const;
     int getYear() const;
