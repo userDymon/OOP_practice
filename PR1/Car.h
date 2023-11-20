@@ -2,7 +2,7 @@
 #include "Transport.h"
 #include <string>
 
-class Car : Transport
+class Car : public Transport
 {
 private:
     int vinNumber;
@@ -20,6 +20,8 @@ public:
 
     void setVinNumber(int);
     void setDoors(int);
+
+    double priceWithDiscount() override;
 
     friend std::istream& operator >>(std::istream&, Car&);
     friend std::ostream& operator <<(std::ostream&, Car&);

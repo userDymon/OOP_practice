@@ -21,3 +21,8 @@ bool Bus::getHasDisabledSeats() {
 void Bus::setHasDisabledSeats(bool hasDisabledSeats) {
     this->hasDisabledSeats = hasDisabledSeats;
 }
+
+double Bus::priceWithDiscount()
+{
+    return (price * 0.95);
+}

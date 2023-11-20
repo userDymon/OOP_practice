@@ -24,6 +24,11 @@ int Car::getDoors() const { return doors; }
 void Car::setVinNumber(int vin_number) { this->vinNumber = vin_number; }
 void Car::setDoors(int doors) { this->doors = doors; }
 
+double Car::priceWithDiscount()
+{
+    return (price * 0.8);
+}
+
 std::istream& operator>>(std::istream& in, Car& car) {
     int id;
     std::string model;

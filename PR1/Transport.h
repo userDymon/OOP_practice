@@ -20,6 +20,8 @@ public:
     void setRegistrationNumber(int);
     void setSeatsCount(int);
 
+    virtual double priceWithDiscount() = 0;
+
 protected:
     int id;
     std::string model;

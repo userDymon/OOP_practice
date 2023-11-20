@@ -1,7 +1,7 @@
 #pragma once
 #include "Transport.h"
 #include <string>
-class Bus : Transport
+class Bus : public Transport
 {
 private:
     bool hasDisabledSeats;
@@ -12,5 +12,7 @@ public:
 
     bool getHasDisabledSeats();
     void setHasDisabledSeats(bool hasDisabledSeats);
+
+    double priceWithDiscount() override;
 };
 
