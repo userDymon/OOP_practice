@@ -14,5 +14,8 @@ public:
     void setHasDisabledSeats(bool hasDisabledSeats);
 
     double priceWithDiscount() override;
+
+    friend std::istream& operator >>(std::istream&, Bus&);
+    friend std::ostream& operator <<(std::ostream&, Bus&);
 };
 
