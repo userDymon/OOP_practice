@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>328</width>
+    <height>314</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLineEdit" name="idLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="modelLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="yearLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="priceLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="regNumLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="vinNumLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="passengerCoutnLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="doorCountLineEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="id">
+            <property name="text">
+             <string>id:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="model">
+            <property name="text">
+             <string>model:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="year">
+            <property name="text">
+             <string>year:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="price">
+            <property name="text">
+             <string>price:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="regNum">
+            <property name="text">
+             <string>regestration number:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="vinNum">
+            <property name="text">
+             <string>vin number:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="passengerCount">
+            <property name="text">
+             <string>passenger seats:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="doorCount">
+            <property name="text">
+             <string>door count:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLabel" name="idLabel">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="modelLabel">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="yearLabel">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="priceLabel">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="regNumLabel">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="vinNumLabel">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="passengerCountLabel">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="doorCountLabel">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="createObject">
+        <property name="text">
+         <string>create</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>328</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCreate_object">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionCreate_object"/>
+    <addaction name="actionShow_object"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuCreate_object"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCreate_object">
+   <property name="text">
+    <string>Create object</string>
+   </property>
+  </action>
+  <action name="actionShow_object">
+   <property name="text">
+    <string>Show object</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

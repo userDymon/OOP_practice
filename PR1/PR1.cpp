@@ -43,8 +43,5 @@ int main()
         cout << "Price with discount: " << transArray[i]->priceWithDiscount() << endl;
     }
 
-    for (int i = 0; i < size; i++)
-    {
-        delete transArray[i];
-    }
+    delete[] transArray;
 }
