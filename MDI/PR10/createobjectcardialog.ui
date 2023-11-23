@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateObjectCarDialog</class>
+ <widget class="QDialog" name="CreateObjectCarDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="id">
+           <property name="text">
+            <string>id:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="model">
+           <property name="text">
+            <string>model:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="year">
+           <property name="text">
+            <string>year:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="price">
+           <property name="text">
+            <string>price:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="regNum">
+           <property name="text">
+            <string>registration number:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="vinNum">
+           <property name="text">
+            <string>vin number:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="seatsCount">
+           <property name="text">
+            <string>seats count:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="doorCount">
+           <property name="text">
+            <string>door count:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLineEdit" name="idLineEdit"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="modelLineEdit"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="yearLineEdit"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="priceLineEdit"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="regNumLineEdit"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="vinNumLineEdit"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="seatsCountLineEdit"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="doorCountLineEdit"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="createObjectCarButton">
+       <property name="text">
+        <string>Create</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
