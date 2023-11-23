@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+<<<<<<< HEAD
+=======
+#include <QString>
+>>>>>>> 3b40e7b9cbda17af2e5386a9d5314d76cd1db60f
 #include "Car.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,5 +32,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Car *car;
+<<<<<<< HEAD
+=======
+    void hasCritical(QString);
+>>>>>>> 3b40e7b9cbda17af2e5386a9d5314d76cd1db60f
 };
 #endif // MAINWINDOW_H
