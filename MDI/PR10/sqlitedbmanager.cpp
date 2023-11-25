@@ -7,6 +7,8 @@
 #include <QSqlError>
 #include <QSqlQuery>
 
+SqliteDBManager* SqliteDBManager::instance = nullptr;
+
 SqliteDBManager::SqliteDBManager()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
@@ -127,8 +129,8 @@ bool SqliteDBManager::insertIntoTable(Bus &bus)
     QSqlQuery query;
 
     query.prepare(
-        "INSERT INTO cars(model, year, price, registrationNumber, seatsCount, hasDisabledSeats)\
-        VALUES(:model, :year, :price, :registrationNumber, :seatsCount, :doorCount, :hasDisabledSeats)");
+        "INSERT INTO buses(model, year, price, registrationNumber, seatsCount, hasDisabledSeats)\
+        VALUES(:model, :year, :price, :registrationNumber, :seatsCount, :hasDisabledSeats)");
     query.bindValue(":model", QString::fromStdString(bus.getModel()));
     query.bindValue(":year", bus.getYear());
     query.bindValue(":price", bus.getPrice());
@@ -137,7 +139,7 @@ bool SqliteDBManager::insertIntoTable(Bus &bus)
     query.bindValue(":hasDisabledSeats", bus.getHasDisabledSeats());
 
     if (!query.exec()) {
-        qDebug() << "error insert into cars";
+        qDebug() << "error insert into buses";
         qDebug() << query.lastError().text();
         qDebug() << query.lastQuery();
 

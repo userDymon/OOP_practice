@@ -5,6 +5,13 @@
 
 #include "Car.h"
 
+#include "dbmanager.h"
+#include "sqlitedbmanager.h"
+
+class QSqlTableModel;
+
+class DBManager;
+
 namespace Ui {
 class CarListWidget;
 }
@@ -14,14 +21,18 @@ class CarListWidget : public QDialog
     Q_OBJECT
 
 public:
-    explicit CarListWidget(QWidget *parent = nullptr);
+    explicit CarListWidget(DBManager* dbManager, QWidget* parent = nullptr);
     ~CarListWidget();
-
-public slots:
-    void addNewCarItem(Car*);
 
 private:
     Ui::CarListWidget *ui;
+
+    DBManager* dbManager;
+    QSqlTableModel* model;
+
+    void setupModel(const QString& tableName, const QStringList& headers);
+
+    void createUI();
 };
 
 #endif // CARLISTWIDGET_H

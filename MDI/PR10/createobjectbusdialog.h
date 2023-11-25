@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "Bus.h"
+#include "dbmanager.h"
+#include "sqlitedbmanager.h"
 
 namespace Ui {
 class CreateObjectBusDialog;
@@ -13,17 +15,15 @@ class CreateObjectBusDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit CreateObjectBusDialog(QWidget *parent = nullptr);
+    explicit CreateObjectBusDialog(DBManager* dbManager, QWidget *parent = nullptr);
     ~CreateObjectBusDialog();
 
 private slots:
     void on_createObjectBusButton_clicked();
 
-signals:
-    void createdBus(Bus*);
-
 private:
     Ui::CreateObjectBusDialog *ui;
+    DBManager* dbManager;
 };
 
 #endif // CREATEOBJECTBUSDIALOG_H

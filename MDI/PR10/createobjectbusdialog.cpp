@@ -1,14 +1,20 @@
 #include "createobjectbusdialog.h"
 #include "ui_createobjectbusdialog.h"
+
 #include "Car.h"
 #include "mainwindow.h"
+#include "dbmanager.h"
+#include "sqlitedbmanager.h"
+
 #include <QMessageBox>
 #include <QString>
+#include <QSqlTableModel>
 
 
-CreateObjectBusDialog::CreateObjectBusDialog(QWidget *parent) :
+CreateObjectBusDialog::CreateObjectBusDialog(DBManager* dbManager, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CreateObjectBusDialog)
+    ui(new Ui::CreateObjectBusDialog),
+    dbManager(dbManager)
 {
     ui->setupUi(this);
 }
@@ -33,7 +39,7 @@ void CreateObjectBusDialog::on_createObjectBusButton_clicked()
     else if(ui->seatsCountLineEdit->text().isEmpty())
         QMessageBox::critical(this, "Eror", "The field must be filled");
     else{
-        Bus * bus = new Bus(ui->idLineEdit->text().toInt(),
+        Bus bus(ui->idLineEdit->text().toInt(),
                            ui->modelLineEdit->text().toStdString(),
                            ui->yearLineEdit->text().toInt(),
                            ui->priceLineEdit->text().toDouble(),
@@ -41,7 +47,7 @@ void CreateObjectBusDialog::on_createObjectBusButton_clicked()
                            ui->seatsCountLineEdit->text().toInt(),
                            ui->hasDisabledSeatsCheckBox->isChecked()
                            );
-        emit createdBus(bus);
+        dbManager->insertIntoTable(bus);
         this->accept();
     }
 }

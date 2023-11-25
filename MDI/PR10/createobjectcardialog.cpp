@@ -1,15 +1,20 @@
 #include "createobjectcardialog.h"
 #include "ui_createobjectcardialog.h"
 
-#include "Car.h"
+#include "Bus.h"
 #include "mainwindow.h"
+#include "dbmanager.h"
+#include "sqlitedbmanager.h"
 
 #include <QMessageBox>
 #include <QString>
+#include <QSqlTableModel>
 
-CreateObjectCarDialog::CreateObjectCarDialog(QWidget *parent) :
+
+CreateObjectCarDialog::CreateObjectCarDialog(DBManager* dbManager, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CreateObjectCarDialog)
+    ui(new Ui::CreateObjectCarDialog),
+    dbManager(dbManager)
 {
     ui->setupUi(this);
 }
@@ -38,7 +43,7 @@ void CreateObjectCarDialog::on_createObjectCarButton_clicked()
     else if(ui->doorCountLineEdit->text().isEmpty())
         QMessageBox::critical(this, "Eror", "The field must be filled");
     else{
-        Car * car = new Car(ui->idLineEdit->text().toInt(),
+        Car car(ui->idLineEdit->text().toInt(),
                            ui->modelLineEdit->text().toStdString(),
                            ui->yearLineEdit->text().toInt(),
                            ui->priceLineEdit->text().toDouble(),
@@ -46,7 +51,7 @@ void CreateObjectCarDialog::on_createObjectCarButton_clicked()
                            ui->vinNumLineEdit->text().toInt(),
                            ui->seatsCountLineEdit->text().toInt(),
                            ui->doorCountLineEdit->text().toInt());
-        emit createdCar(car);
+        dbManager->insertIntoTable(car);
         this->accept();
     }
 }
