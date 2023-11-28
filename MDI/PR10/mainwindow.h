@@ -1,15 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QDialog>
 #include <QMainWindow>
 #include <QVector>
-#include <QDialog>
 
-#include "createobjectcardialog.h"
-#include "createobjectbusdialog.h"
-#include "carlistwidget.h"
-#include "buslistwidget.h"
 #include "Car.h"
+#include "buslistwidget.h"
+#include "carlistwidget.h"
+#include "createobjectbusdialog.h"
+#include "createobjectcardialog.h"
 #include "dbmanager.h"
 #include "sqlitedbmanager.h"
 

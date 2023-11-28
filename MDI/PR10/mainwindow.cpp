@@ -1,9 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QCoreApplication>
 #include <QDialog>
+#include <QFile>
 #include <QLabel>
 #include <QLineEdit>
+#include <QTextStream>
+#include <QtDebug>
 
 #include "createobjectcardialog.h"
 #include "createobjectbusdialog.h"
@@ -31,7 +35,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::on_createObjectCarButton_clicked()
 {

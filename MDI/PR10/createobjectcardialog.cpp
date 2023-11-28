@@ -26,32 +26,27 @@ CreateObjectCarDialog::~CreateObjectCarDialog()
 
 void CreateObjectCarDialog::on_createObjectCarButton_clicked()
 {
-    if(ui->idLineEdit->text().isEmpty())
-        QMessageBox::critical(this, "Eror", "The field must be filled");
-    else if(ui->modelLineEdit->text().isEmpty())
-        QMessageBox::critical(this, "Eror", "The field must be filled");
-    else if(ui->yearLineEdit->text().isEmpty())
-        QMessageBox::critical(this, "Eror", "The field must be filled");
-    else if(ui->priceLineEdit->text().isEmpty())
-        QMessageBox::critical(this, "Eror", "The field must be filled");
-    else if(ui->regNumLineEdit->text().isEmpty())
-        QMessageBox::critical(this, "Eror", "The field must be filled");
-    else if(ui->vinNumLineEdit->text().isEmpty())
-        QMessageBox::critical(this, "Eror", "The field must be filled");
-    else if(ui->seatsCountLineEdit->text().isEmpty())
-        QMessageBox::critical(this, "Eror", "The field must be filled");
-    else if(ui->doorCountLineEdit->text().isEmpty())
-        QMessageBox::critical(this, "Eror", "The field must be filled");
-    else{
+    try {
+        if (ui->idLineEdit->text().isEmpty() || ui->modelLineEdit->text().isEmpty()
+            || ui->priceLineEdit->text().isEmpty() || ui->regNumLineEdit->text().isEmpty()
+            || ui->seatsCountLineEdit->text().isEmpty() || ui->vinNumLineEdit->text().isEmpty()
+            || ui->doorCountLineEdit->text().isEmpty())
+            throw "notFilledExeption";
+
         Car car(ui->idLineEdit->text().toInt(),
-                           ui->modelLineEdit->text().toStdString(),
-                           ui->yearLineEdit->text().toInt(),
-                           ui->priceLineEdit->text().toDouble(),
-                           ui->regNumLineEdit->text().toInt(),
-                           ui->vinNumLineEdit->text().toInt(),
-                           ui->seatsCountLineEdit->text().toInt(),
-                           ui->doorCountLineEdit->text().toInt());
+                ui->modelLineEdit->text().toStdString(),
+                ui->yearLineEdit->text().toInt(),
+                ui->priceLineEdit->text().toDouble(),
+                ui->regNumLineEdit->text().toInt(),
+                ui->vinNumLineEdit->text().toInt(),
+                ui->seatsCountLineEdit->text().toInt(),
+                ui->doorCountLineEdit->text().toInt());
         dbManager->insertIntoTable(car);
         this->accept();
+
+    } catch (const char *ex) {
+        QMessageBox::critical(this, "Eror", "The field must be filled");
+        qInfo() << "The field must be filled";
+        this->reject();
     }
 }

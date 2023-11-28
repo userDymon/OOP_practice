@@ -54,7 +54,7 @@ bool SqliteDBManager::restoreDataBase()
             return true;
         }
     } else {
-        qDebug() << "Не вдалось відновити базу даних";
+        qCritical() << "Cannot restore database";
         return false;
     }
 }
@@ -77,7 +77,7 @@ bool SqliteDBManager::createTables()
             doorCount INTEGER NOT NULL\
         )\
     ")) {
-        qDebug() << "DataBase: error of create cars";
+        qDebug() << "DataBase: error of create table cars";
         qDebug() << query.lastError().text();
         return false;
     }
@@ -89,10 +89,10 @@ bool SqliteDBManager::createTables()
                 price DOUBLE NOT NULL,\
                 registrationNumber INTEGER NOT NULL,\
                 seatsCount INTEGER NOT NULL,\
-                hasDisabledSeats BOOL\ 
+                hasDisabledSeats BOOL\
             )\
     ")) {
-        qDebug() << "DataBase: error of create cars";
+        qDebug() << "DataBase: error of create table buses";
         qDebug() << query.lastError().text();
         return false;
     } else {
@@ -116,7 +116,7 @@ bool SqliteDBManager::insertIntoTable(Car &car)
     query.bindValue(":doorCount", car.getDoors());
 
     if (!query.exec()) {
-        qDebug() << "error insert into cars";
+        qDebug() << "error insert into table cars";
         qDebug() << query.lastError().text();
         qDebug() << query.lastQuery();
 
@@ -139,7 +139,7 @@ bool SqliteDBManager::insertIntoTable(Bus &bus)
     query.bindValue(":hasDisabledSeats", bus.getHasDisabledSeats());
 
     if (!query.exec()) {
-        qDebug() << "error insert into buses";
+        qDebug() << "error insert into table buses";
         qDebug() << query.lastError().text();
         qDebug() << query.lastQuery();
 
