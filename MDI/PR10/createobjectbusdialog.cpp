@@ -26,25 +26,19 @@ CreateObjectBusDialog::~CreateObjectBusDialog()
 
 void CreateObjectBusDialog::on_createObjectBusButton_clicked()
 {
-    try {
-        if (ui->idLineEdit->text().isEmpty() || ui->modelLineEdit->text().isEmpty()
-            || ui->priceLineEdit->text().isEmpty() || ui->regNumLineEdit->text().isEmpty()
-            || ui->seatsCountLineEdit->text().isEmpty())
-            throw "notFilledExeption";
-
-        Bus bus(ui->idLineEdit->text().toInt(),
-                ui->modelLineEdit->text().toStdString(),
-                ui->yearLineEdit->text().toInt(),
-                ui->priceLineEdit->text().toDouble(),
-                ui->regNumLineEdit->text().toInt(),
-                ui->seatsCountLineEdit->text().toInt(),
-                ui->hasDisabledSeatsCheckBox->isChecked());
-        dbManager->insertIntoTable(bus);
-        this->accept();
-
-    } catch (const char *ex) {
+    if (ui->idLineEdit->text().isEmpty() || ui->modelLineEdit->text().isEmpty()
+        || ui->priceLineEdit->text().isEmpty() || ui->regNumLineEdit->text().isEmpty()
+        || ui->seatsCountLineEdit->text().isEmpty()) {
         QMessageBox::critical(this, "Eror", "The field must be filled");
         qInfo() << "The field must be filled";
-        this->reject();
     }
+    Bus bus(ui->idLineEdit->text().toInt(),
+            ui->modelLineEdit->text().toStdString(),
+            ui->yearLineEdit->text().toInt(),
+            ui->priceLineEdit->text().toDouble(),
+            ui->regNumLineEdit->text().toInt(),
+            ui->seatsCountLineEdit->text().toInt(),
+            ui->hasDisabledSeatsCheckBox->isChecked());
+    dbManager->insertIntoTable(bus);
+    this->accept();
 }

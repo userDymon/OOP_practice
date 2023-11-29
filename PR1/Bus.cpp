@@ -35,9 +35,7 @@ std::istream& operator >>(std::istream& in, Bus& bus)
     int year;
     double price;
     int regNumber;
-    int vinNumber;
     int passengerSeats;
-    int doors;
     bool hasDisabledSeats;
 
     std::cout << "Enter car id: ";

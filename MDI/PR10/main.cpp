@@ -31,7 +31,7 @@ void customMessageHandler(QtMsgType type, const QMessageLogContext &context, con
             stream << "Fatal: ";
             break;
         }
-        // Запис повідомлення у файл
+
         stream << msg << " (" << context.file << ":" << context.line << ", " << context.function
                << ")\n";
         logFile.close();
