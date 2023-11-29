@@ -6,8 +6,8 @@ Bus::Bus() : Transport()
     this->hasDisabledSeats = false;
 }
 
-Bus::Bus(int id, std::string model, int year, double price, int registrationNumber, int seatsCount, bool has_disabled_seats) : 
-    Transport(id, model, year, price, registrationNumber, seatsCount) {
+Bus::Bus(std::string model, int year, double price, int registrationNumber, int seatsCount, bool has_disabled_seats) : 
+    Transport(model, year, price, registrationNumber, seatsCount) {
     this->hasDisabledSeats = has_disabled_seats;
 }
 
@@ -30,7 +30,6 @@ double Bus::priceWithDiscount()
 
 std::istream& operator >>(std::istream& in, Bus& bus)
 {
-    int id;
     std::string model;
     int year;
     double price;
@@ -38,8 +37,6 @@ std::istream& operator >>(std::istream& in, Bus& bus)
     int passengerSeats;
     bool hasDisabledSeats;
 
-    std::cout << "Enter car id: ";
-    in >> id;
     std::cout << "Enter car model: ";
     in.ignore();
     getline(in, model);
@@ -54,7 +51,6 @@ std::istream& operator >>(std::istream& in, Bus& bus)
     std::cout << "Enter if has didabled seats: ";
     in >> hasDisabledSeats;
 
-    bus.setID(id);
     bus.setModel(model);
     bus.setYear(year);
     bus.setPrice(price);

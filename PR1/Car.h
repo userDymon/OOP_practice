@@ -10,7 +10,7 @@ private:
 
 public:
     Car();
-    Car(int, std::string, int, double, int, int, int, int);
+    Car(std::string, int, double, int, int, int, int);
     Car(Car&, Transport&);
     ~Car(){}
 

@@ -1,8 +1,10 @@
 #include "Transport.h"
 
+int Transport::identic = 0;
+
 Transport::Transport()
 {
-    this->id = 0;
+    this->id = identic++;
     this->model = "none";
     this->year = 0;
     this->price = 0;
@@ -10,8 +12,8 @@ Transport::Transport()
     this->seatsCount = 0;
 }
 
-Transport::Transport(int id, std::string model, int year, double price, int registrationNumber, int seatsCount) {
-    this->id = id;
+Transport::Transport(std::string model, int year, double price, int registrationNumber, int seatsCount) {
+    this->id = identic++;
     this->model = model;
     this->year = year;
     this->price = price;
@@ -53,10 +55,6 @@ int Transport::getSeatsCount()
     return seatsCount;
 }
 
-void Transport::setID(int id) {
-    this->id = id;
-}
-
 void Transport::setModel(std::string model) {
     this->model = model;
 }
@@ -76,4 +74,48 @@ void Transport::setRegistrationNumber(int registrationNumber) {
 void Transport::setSeatsCount(int seatsCount)
 {
     this->seatsCount = seatsCount;
+}
+
+std::istream& operator>>(std::istream& in, Transport& transport) {
+    std::string model;
+    int year;
+    double price;
+    int regNumber;
+    int vinNumber;
+    int passengerSeats;
+    int doors;
+
+    std::cout << "Enter car model: ";
+    in.ignore();
+    getline(in, model);
+    std::cout << "Enter car year: ";
+    in >> year;
+    std::cout << "Enter car price: ";
+    in >> price;
+    std::cout << "Enter car registration number: ";
+    in >> regNumber;
+    std::cout << "Enter car VIN number: ";
+    in >> vinNumber;
+    std::cout << "Enter number of passenger seats: ";
+    in >> passengerSeats;
+    std::cout << "Enter number of doors: ";
+    in >> doors;
+
+    transport.setModel(model);
+    transport.setYear(year);
+    transport.setPrice(price);
+    transport.setRegistrationNumber(regNumber);
+    transport.setSeatsCount(passengerSeats);
+
+    return in;
+}
+
+ std::ostream& operator<<(std::ostream& out, Transport& transport) {
+    out << "Car id: " << transport.getID() << "\n";
+    out << "Car model: " << transport.getModel() << "\n";
+    out << "Car year: " << transport.getYear() << "\n";
+    out << "Car price: " << transport.getPrice() << "\n";
+    out << "Car registration number: " << transport.getRegistrationNumber() << "\n";
+    out << "Number of passenger seats: " << transport.getSeatsCount() << "\n";
+    return out;
 }

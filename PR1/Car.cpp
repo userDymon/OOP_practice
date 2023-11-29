@@ -6,8 +6,8 @@ Car::Car() : Transport() {
     doors = 0;
 }
 
-Car::Car(int id, std::string model, int year, double price, int regNumber, int vinNumber, int passengerSeats, int doors) : 
-    Transport(id, model, year, price, regNumber, passengerSeats) {
+Car::Car(std::string model, int year, double price, int regNumber, int vinNumber, int passengerSeats, int doors) : 
+    Transport(model, year, price, regNumber, passengerSeats) {
     this->vinNumber = vinNumber;
     this->doors = doors;
 }
@@ -30,7 +30,6 @@ double Car::priceWithDiscount()
 }
 
 std::istream& operator>>(std::istream& in, Car& car) {
-    int id;
     std::string model;
     int year;
     double price;
@@ -39,8 +38,6 @@ std::istream& operator>>(std::istream& in, Car& car) {
     int passengerSeats;
     int doors;
 
-    std::cout << "Enter car id: ";
-    in >> id;
     std::cout << "Enter car model: ";
     in.ignore();
     getline(in, model);
@@ -57,7 +54,6 @@ std::istream& operator>>(std::istream& in, Car& car) {
     std::cout << "Enter number of doors: ";
     in >> doors;
 
-    car.setID(id);
     car.setModel(model);
     car.setYear(year);
     car.setPrice(price);
