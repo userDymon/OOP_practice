@@ -7,6 +7,7 @@ Transport::Transport()
     this->year = 0;
     this->price = 0;
     this->registrationNumber = 0;
+    this->seatsCount = 0;
 }
 
 Transport::Transport(int id, std::string model, int year, double price, int registrationNumber, int seatsCount) {
